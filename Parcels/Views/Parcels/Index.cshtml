@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Epicodus Parcel!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+  <style>
+    body {
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Stoned_Fox.jpg/1200px-Stoned_Fox.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+    @using Parcels.Models
+    <h1>Parcel Info: </h1>
+    <ul>
+    @foreach (Parcel parcel in Model)
+    {
+      <li>Cost: @parcel.CostToShip()</li>
+      <li>Parcel Volume: @parcel.Volume()</li>
+    }
+    </ul>
+    <a href="/parcel/new">Add a new item.</a>
+  </body>
+</html>
